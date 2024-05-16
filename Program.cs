@@ -20,10 +20,9 @@ namespace Сonsole
                 string choice;
                 Console.WriteLine("\nVitalii Bobyr - 05/13/24");
                 Console.WriteLine("Programming 120 - F22 - Midterm Menu");
-                Console.WriteLine($"1 - Personal Calculator\n2 - Finance Calculator\n3 - Geometry Calculator\n4 - Cartesian Plane\ne - Exit Calculator\nChoose your selection");
+                Console.Write($"1 - Personal Calculator\n2 - Finance Calculator\n3 - Geometry Calculator\n4 - Cartesian Plane\ne - Exit Calculator\nChoose your selection: ");
                 choice = Console.ReadLine().ToLower();
-                
-                
+                               
 
                 try
                 {
@@ -34,9 +33,9 @@ namespace Сonsole
                             string case_1;
                         personal_calculator:
                             int number_1 = 0, number_2 = 0, result=0;
-                            Console.WriteLine("\nEnter you first number: ");
+                            Console.Write("\nEnter you first number: ");
                             number_1=int.Parse(Console.ReadLine());
-                            Console.WriteLine("+ - Add\n- - Subtract\n* - Multiply\n/ - Divide\ne - Exit Personal Calculator\nChoose your selection");
+                            Console.Write("+ - Add\n- - Subtract\n* - Multiply\n/ - Divide\ne - Exit Personal Calculator\nChoose your selection: ");
                             case_1 = Console.ReadLine().ToLower();
                             try 
                             {  switch (case_1)
@@ -80,7 +79,7 @@ namespace Сonsole
                         case "2": finance: 
                             Console.WriteLine("\nFinance Calculator");
                             string letter;  
-                            Console.WriteLine("1 - Net Income\n2 - Rule of 72\n3 - Net Worth\ne - Exit Finance Calculator\nChoose your selection");
+                            Console.Write("1 - Net Income\n2 - Rule of 72\n3 - Net Worth\ne - Exit Finance Calculator\nChoose your selection: ");
                             letter = Console.ReadLine().ToLower();
                             
                             try 
@@ -89,23 +88,23 @@ namespace Сonsole
                                {
                                 case "1": Console.WriteLine("Net Income");
                                         double income = 0, costs = 0;
-                                        Console.WriteLine("Enter your income");
+                                        Console.Write("Enter your income: ");
                                         income = double.Parse(Console.ReadLine());
-                                        Console.WriteLine("Enter your costs");
+                                        Console.Write("Enter your costs: ");
                                         costs = double.Parse(Console.ReadLine());
                                         Console.WriteLine($"You Net Income will be: {Math.Round(income - costs, 3)}$");
                                     goto finance;
                                 case "2": Console.WriteLine("Rule of 72");
-                                        Console.WriteLine("Enter the expected interest rate: ");
+                                        Console.Write("Enter the expected interest rate: ");
                                         double interest = 0;
                                         interest=double.Parse(Console.ReadLine());
                                         Console.WriteLine($"At an interest rate of {interest}% it will take {Math.Round(72/interest,1)} years to double your $");
                                     goto finance;
                                 case "3": Console.WriteLine("Net Worth");
                                         double assets = 0, liabilities = 0;
-                                        Console.WriteLine("Enter your income");
+                                        Console.Write("Enter your assets: ");
                                         assets = double.Parse(Console.ReadLine());
-                                        Console.WriteLine("Enter your costs");
+                                        Console.Write("Enter your liabilitties: ");
                                         liabilities = double.Parse(Console.ReadLine());
                                         Console.WriteLine($"You Net Worth will be: {Math.Round(assets - liabilities, 3)}$");
                                         goto finance;
@@ -125,7 +124,7 @@ namespace Сonsole
                         case "3": geometry:
                             Console.WriteLine("\nGeometry Calculator");
                             string geometry;
-                            Console.WriteLine("1 - Square\n2 - Rectangle\n3 - Circle\n4 - Right Circular Cone \ne - Exit Finance Calculator\nChoose your selection");
+                            Console.Write("1 - Square\n2 - Rectangle\n3 - Circle\n4 - Right Circular Cone \ne - Exit Finance Calculator\nChoose your selection: ");
                             geometry = Console.ReadLine().ToLower();
                             try
                             {
@@ -133,31 +132,31 @@ namespace Сonsole
                                 {
                                     case "1": Console.WriteLine("Square");
                                         double side;
-                                        Console.WriteLine("Enter the length of one side of the square");
+                                        Console.Write("Enter the length of one side of the square: ");
                                         side = double.Parse(Console.ReadLine());
                                         Console.WriteLine($"Area of a square will be: {side*side} sq.feets and perimeter of a square will be {side*4} feets");
                                         goto geometry;
 
                                     case "2": Console.WriteLine("Rectangle");
                                         double length = 0, width = 0; ;
-                                        Console.WriteLine("Enter the length of the rectangle");
+                                        Console.Write("Enter the length of the rectangle: ");
                                         length = double.Parse(Console.ReadLine());
-                                        Console.WriteLine("Enter the width of the rectangle");
+                                        Console.Write("Enter the width of the rectangle: ");
                                         width = double.Parse(Console.ReadLine());
                                         Console.WriteLine($"Area of a rectangle will be: {length * width} sq.feets and perimeter of a square will be {(length + width)*2} feets");
                                         goto geometry;
 
                                     case "3": Console.WriteLine("Circle");
                                         double radius = 0;
-                                        Console.WriteLine("Enter the radius of the circle");
+                                        Console.Write("Enter the radius of the circle: ");
                                         radius = double.Parse(Console.ReadLine());
-                                        Console.WriteLine($"Area of this cicle will be:{Math.Round(Math.PI*(radius*radius),3)} sq.feets and circumference will be: {Math.Round(2* Math.PI * radius, 3)} feets");
+                                        Console.WriteLine($"Area of this cicle will be: {Math.Round(Math.PI*(radius*radius),3)} sq.feets and circumference will be: {Math.Round(2* Math.PI * radius, 3)} feets");
                                         goto geometry;
                                     case "4": Console.WriteLine("Right Circular Cone");
                                         double radius_cone = 0,height = 0;
-                                        Console.WriteLine("Enter the radius of the cone");
+                                        Console.Write("Enter the radius of the cone: ");
                                         radius_cone = double.Parse(Console.ReadLine());
-                                        Console.WriteLine("Enter the height of the cone");
+                                        Console.Write("Enter the height of the cone: ");
                                         height=double.Parse(Console.ReadLine());
                                         Console.WriteLine($"Volume of the cone will be: {Math.Round(0.333 * Math.PI* radius_cone * radius_cone *height,2)} cubic feets");
                                         goto geometry;
@@ -221,7 +220,7 @@ namespace Сonsole
                             break;
 
                         default:
-                            Console.WriteLine("You entered a number other than 1, 2, 3 or 4.");
+                            Console.WriteLine("You entered wrong symbols");
                         goto start;
                             
                     }
